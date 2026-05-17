@@ -40,10 +40,9 @@
   background: var(--course-color);
 }
 
-.course-progress-fill {
-  width: var(--progress-width);
-  background: var(--course-color);
-}
+
+
+
 
 #progressFill {
   width: var(--progress-width);
@@ -68,14 +67,17 @@
   border-radius: 999px;
   overflow: hidden;
 }
-
 .progress-bar-fill {
   height: 100%;
-  background: #02C39A;
   width: 0%;
   transition: width 0.4s ease;
+
+  background: var(--course-color, #02C39A);
 }
 
+.course-progress-fill {
+  width: var(--progress-width);
+}
 
 /* ── Per-course progress breakdown ─────────────────────── */
 .course-progress-section {
