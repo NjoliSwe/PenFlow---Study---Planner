@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PenFlow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-container landing-container">
+
+      <div class="logo-container">
+        <img src="./images/pencil-icon.png" alt="PenFlow Logo" class="logo-img">
+        <h1 class="brand-title">PenFlow</h1>
+      </div>
+
+      <p class="subtitle">
+        Smart Study Planner for Students ✨
+      </p>
+
+      <div class="landing-buttons">
+        <a href="login.html" class="form-btn landing-btn">Login</a>
+        <a href="signup.html" class="form-btn landing-btn secondary-btn">Sign Up</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn === "true") {
+      window.location.href = "HomePage.html";
+    }
+  </script>
+
+</body>
+</html>

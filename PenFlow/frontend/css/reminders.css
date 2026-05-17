@@ -1,0 +1,296 @@
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.settings-panel,
+.reminder-card,
+.reminder-group {
+  background: #eef6f7;
+  border: 1px solid #e9ddd6;
+  border-radius: 12px;
+}
+
+.page-banner {
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+.color-dot{
+
+background-color:
+var(--course-color);
+
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #02C39A;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.page-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(2, 195, 154, 0.12);
+  color: #02C39A;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.page-subtitle {
+  color: #555;
+  margin-top: 0.75rem;
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+.reminder-tools {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.settings-panel {
+  overflow: hidden;
+}
+
+.settings-panel.hidden {
+  display: none;
+}
+
+.settings-panel h4 {
+  font-size: 1.05rem;
+  color: #2d2a26;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e9ddd6;
+}
+.color-dot {
+  background-color: var(--course-color);
+}
+
+.settings-content {
+  padding: 1.25rem;
+}
+
+.settings-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2d2a26;
+}
+
+.form-group select {
+  width: 100%;
+  border: 1px solid #e9ddd6;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #2d2a26;
+  outline: none;
+}
+
+.form-group select:focus {
+  border-color: #02C39A;
+}
+
+.form-buttons {
+  margin-top: 1rem;
+}
+
+.note {
+  margin-top: 0.75rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.reminders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reminder-card {
+  padding: 1rem 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.reminder-left {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.color-dot {
+  width: 12px;
+  height: 52px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.reminder-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #2d2a26;
+}
+
+.reminder-meta {
+  font-size: 0.86rem;
+  color: #555;
+  margin-top: 0.25rem;
+  line-height: 1.6;
+}
+
+.reminder-right {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-deadline {
+  background: rgba(228, 52, 81, 0.12);
+  color: #e43451;
+}
+
+.badge-session {
+  background: rgba(2, 195, 154, 0.12);
+  color: #02C39A;
+}
+
+.badge-time {
+  background: #fff;
+  border: 1px solid #e9ddd6;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .settings-row {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reminder-right {
+    justify-content: flex-start;
+  }
+
+  .reminder-tools .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+.page-title-row {
+  margin-bottom: 0.2rem;
+}
+
+.page-subtitle {
+  margin-top: 0.35rem;
+}
+
+.reminder-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.reminder-group {
+  padding: 1rem 1.1rem;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.group-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2d2a26;
+}
+
+.group-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e9ddd6;
+  color: #555;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.group-empty {
+  padding: 0.9rem 0;
+  color: #666;
+  font-size: 0.92rem;
+}
+
+.reminder-card {
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .reminder-groups {
+    grid-template-columns: 1fr;
+  }
+}

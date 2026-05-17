@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Courses - Smart Study Planner</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="./css/layout.css" rel="stylesheet"/>
+<link href="./css/courses.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+<div class="logo">
+<img alt="Penflow logo" class="brand-logo" src="./images/pencil-icon.png"/><span>Penflow</span>
+</div>
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+<div class="profile">
+<span class="greeting">Hello, <span id="userName">Student</span> 👋</span>
+</div>
+</header>
+<aside class="sidebar" id="sidebar">
+<button class="close-sidebar" onclick="toggleSidebar()">✕</button>
+<div class="nav-menu-title">MENU</div>
+<ul class="nav-menu"><li><a href="HomePage.html">Home</a></li><li><a class="active" href="courses.html">Courses</a></li><li><a href="deadlines.html">Deadlines</a></li><li><a href="studyplan.html">Study Plan</a></li><li><a href="availability.html">Availability</a></li><li><a href="reminders.html">Reminders</a></li><li><a href="progress.html">Progress</a></li><li><a href="statistics.html">Statistics</a></li><li><button class="logout-btn" id="logoutBtn" type="button">Log Out</button></li></ul>
+</aside>
+<main>
+<h1 class="page-title">My Courses</h1>
+<div class="course-form-panel">
+<h2>Add Course</h2>
+<div class="form-content">
+<div class="form-row">
+<label for="courseName">Course Name</label>
+<input id="courseName" placeholder="Enter course name" type="text"/>
+</div>
+<div class="form-row">
+<label for="courseCode">Course Code</label>
+<input id="courseCode" placeholder="Enter course code" type="text"/>
+</div>
+<div class="form-row">
+<label for="courseColor">Course Color</label>
+<input id="courseColor" type="color" value="#02c39a"/>
+</div>
+<div class="form-buttons">
+<button class="btn btn-primary" id="submitBtn">Add Course</button>
+</div>
+</div>
+</div>
+<div class="courses-grid" id="coursesContainer"></div>
+</main>
+<script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('show');
+    }
+  </script>
+<script src="./js/api.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/courses.js"></script>
+
+</body>
+</html>

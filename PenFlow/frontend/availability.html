@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Availability - PenFlow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/availability.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./images/pencil-icon.png" alt="Penflow logo" class="brand-logo" />
+      <span>Penflow</span>
+    </div>
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Open menu">☰</button>
+    <div class="profile">
+      <span class="greeting">Hello, <span id="userName">Student</span> 👋</span>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <button class="close-sidebar" onclick="toggleSidebar()" aria-label="Close menu">✕</button>
+    <p class="nav-menu-title">MENU</p>
+    <ul class="nav-menu">
+      <li><a href="HomePage.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="deadlines.html">Deadlines</a></li>
+      <li><a href="studyplan.html">Study Plan</a></li>
+      <li><a href="availability.html" class="active">Availability</a></li>
+      <li><a href="reminders.html">Reminders</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="statistics.html">Statistics</a></li>
+      <li><button class="logout-btn" id="logoutBtn" type="button">Log Out</button></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="page-shell">
+      <section class="page-banner availability-banner">
+        <div>
+         
+          <div class="page-title-row">
+            <h1 class="page-title" id="availabilityTitle">Availability</h1>
+            
+          </div>
+          <p class="page-subtitle">
+            Save the hours you are free, and PenFlow will keep generated study sessions inside those saved slots.
+          </p>
+        </div>
+      </section>
+
+      <div class="availability-tools">
+        <button class="btn btn-primary" id="openDialogBtn" type="button">+ Add Time Slot</button>
+      </div>
+
+      <section class="note-panel">
+        <p><strong>Note:</strong> Study sessions will only be generated inside these saved time slots.</p>
+      </section>
+
+      <section class="availability-list" id="availabilityList">
+        <div class="empty-state">
+          <p>No availability added yet. Create time slots for your study schedule.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="dialog-overlay" id="dialogOverlay">
+    <div class="dialog">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <p class="dialog-eyebrow">New Slot</p>
+          <h3>Add Time Slot</h3>
+        </div>
+        <button type="button" class="close-btn" id="closeDialogBtn" aria-label="Close dialog">×</button>
+      </div>
+
+      <form class="dialog-body" id="availabilityForm">
+        <div class="form-group">
+          <label for="dayOfWeek">Day</label>
+          <select id="dayOfWeek" required>
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+          </select>
+        </div>
+
+        <div class="time-grid">
+          <div class="form-group">
+            <label for="startTime">Start Time</label>
+            <input id="startTime" type="text" required autocomplete="off" placeholder=" e.g. 14:00" />
+          </div>
+          <div class="form-group">
+            <label for="endTime">End Time</label>
+            <input id="endTime" type="text" required autocomplete="off" placeholder="e.g. 16:00" />
+          </div>
+        </div>
+
+        
+
+        <div class="form-buttons">
+          <button class="btn btn-primary" id="saveSlotBtn" type="submit">Save Slot</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('show');
+    }
+  </script>
+   <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/availability.js"></script>
+ 
+</body>
+</html>

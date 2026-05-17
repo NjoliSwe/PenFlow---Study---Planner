@@ -1,0 +1,165 @@
+.plan-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.day-group {
+  margin-bottom: 1.5rem;
+}
+
+.day-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2d2a26;
+  margin-bottom: 0.75rem;
+}
+.color-dot {
+  background-color: var(--course-color);
+}
+.session-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.session-card {
+  background: #eef6f7;
+  border: 1px solid #e9ddd6;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.session-card.completed {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.session-card.missed {
+  background: rgba(228, 52, 81, 0.1);
+  border-color: rgba(228, 52, 81, 0.3);
+}
+
+.session-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+}
+
+.session-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d2a26;
+}
+
+.session-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.2rem;
+  line-height: 1.5;
+}
+
+.session-right {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.82rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-done {
+  background: #22c55e;
+  color: white;
+}
+
+.btn-done:hover {
+  opacity: 0.9;
+}
+
+.btn-missed {
+  background: #e43451;
+  color: white;
+}
+
+.btn-missed:hover {
+  opacity: 0.9;
+}
+
+.btn-delete {
+  background: #555;
+  color: white;
+}
+
+.btn-delete:hover {
+  opacity: 0.9;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status-missed {
+  background: rgba(228, 52, 81, 0.2);
+  color: #e43451;
+}
+
+.status-scheduled {
+  background: rgba(2, 195, 154, 0.12);
+  color: #02C39A;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #555;
+  background: #eef6f7;
+  border: 1px solid #e9ddd6;
+  border-radius: 12px;
+}
+
+.empty-state p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .session-list {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

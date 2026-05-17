@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress - PenFlow</title>
+<link href="./css/layout.css" rel="stylesheet"/>
+<link href="./css/progress.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <button class="hamburger" onclick="document.querySelector('.sidebar').classList.toggle('show')">☰</button>
+    <img alt="Penflow logo" class="brand-logo" src="./images/pencil-icon.png"/><span>Penflow</span>
+  </div>
+  <div class="profile">
+    <span class="greeting">Hello, <span id="userName">Student</span> 👋</span>
+  </div>
+</header>
+<nav class="sidebar">
+  <button class="close-sidebar" onclick="document.querySelector('.sidebar').classList.remove('show')">X</button>
+  <p class="nav-menu-title">MENU</p>
+  <ul class="nav-menu">
+    <li><a href="HomePage.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="deadlines.html">Deadlines</a></li>
+    <li><a href="studyplan.html">Study Plan</a></li>
+    <li><a href="availability.html">Availability</a></li>
+    <li><a href="reminders.html">Reminders</a></li>
+    <li><a class="active" href="progress.html">Progress</a></li>
+    <li><a href="statistics.html">Statistics</a></li>
+    <li><button class="logout-btn" id="logoutBtn" type="button">Log Out</button></li>
+  </ul>
+</nav>
+<main>
+  <h1 class="page-title">Progress Tracking</h1>
+
+  <!-- FR6.2: Stats row -->
+  <div class="stats-row" id="statsRow"></div>
+
+  <!-- Overall progress bar -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-header">
+      <span>Overall Completion Rate</span>
+      <span id="progressPercent">0%</span>
+    </div>
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- Per-course breakdown -->
+  <div class="course-progress-section">
+    <h2 class="section-title">Progress by Course</h2>
+    <div id="courseProgressSection"></div>
+  </div>
+</main>
+<script src="./js/api.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/progress.js"></script>
+
+</body>
+</html>
