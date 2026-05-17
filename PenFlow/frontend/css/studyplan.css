@@ -163,3 +163,40 @@
     align-items: flex-start;
   }
 }
+
+/************* AI Button ************/
+.ai-btn{
+  background:linear-gradient(135deg , #35d07f, #02c39a);
+  color:white;
+  border:none;
+  border-radius:999px;
+  padding:10px 22px;
+  font-size: 14px;
+  font-weight:500;
+  transition: 0.3s ease;
+  cursor:pointer;
+  box-shadow: 0 6px 14px rgba(2, 195, 154, 1.25);
+}
+
+.ai-btn:hover{
+  transform:transalateY(-2px);
+  box-shadow:0 6px 12px rgba(2, 195, 154, 0.35);
+}
+
+.ai-box{
+  margin-top: 20px;
+  background:#eef6f7;
+  border:1px solid #dff7ee;
+  border-radius: 24px;
+  padding: 24px;
+  color:#333;
+  line-height:1.7;
+  box-shadow:0 2px 8px rgba(0, 0, 0, 0.04);
+  display:none;
+}
+
+.ai-btn-container{
+  display: flex;
+  justify-content: flex-end;
+  margin-top:24px;
+}

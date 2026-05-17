@@ -8,6 +8,8 @@ const deadlineRoutes = require("./routes/deadlineRoutes");
 const availabilityRoutes = require("./routes/availabilityRoutes");
 const reminderRoutes = require("./routes/reminderRoutes");
 const sessionRoutes = require("./routes/sessionRoutes");
+const aiRoutes = require("./routes/aiRoutes");
+
 
 const app = express();
 
@@ -109,6 +111,10 @@ app.use(
 sessionRoutes
 );
 
+app.use(
+"/ai",
+aiRoutes
+);
 
 
 // ===== Port =====

@@ -186,3 +186,13 @@ async function saveReminderSettingsToDB(settingsData) {
     body: JSON.stringify(settingsData)
   });
 }
+
+async function getAIStudyAdvice(userId) {
+  return request(`/ai/study-advice`, {
+    method: "POST", 
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ userId: userId})
+  });
+}

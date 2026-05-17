@@ -550,3 +550,35 @@ planContent.addEventListener("click", async function (event) {
 });
 
 renderPlan();
+
+
+// Additional AI integration
+
+const aiAdviceBtn = document.getElementById("aiAdviceBtn");
+const aiAdviceBox = document.getElementById("aiAdviceBox");
+
+if(aiAdviceBtn){
+aiAdviceBtn.addEventListener("click", async function(){
+try{
+  aiAdviceBox.style.display ="block";
+  aiAdviceBox.innerHTML = "Generating AI advice...";
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  
+  const data = await getAIStudyAdvice(currentUser._id);
+
+  let formatAdvice = data.advice
+  .replace(/\n/g, "<br>")
+  .replace(/#{1,6}\s?/g, "")
+  .replace(/\*\*/g, "")
+  .replace(/\*/g, "");
+
+  aiAdviceBox.innerHTML = formatAdvice;
+
+}catch(error){
+  console.log("AI advice error: ",error);
+  aiAdviceBox.style.display = "block";
+  aiAdviceBox.innerHTML = "Failed to generate AI advice.";
+}
+})
+}
