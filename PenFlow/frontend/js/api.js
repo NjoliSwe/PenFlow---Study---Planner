@@ -1,7 +1,7 @@
 
 // Connects frontend files with backend routes
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://penflow-study-planner.onrender.com";
 
 
 async function request(url, options = {}) {
