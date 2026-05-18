@@ -253,15 +253,15 @@ rescheduledFromId
 
 Create `.env` inside backend:
 
-```env
-PORT=5000
+```Environment Variables
+The project uses environment variables to securely manage configuration values:
+•	PORT: Backend server port 
+•	MONGO_URI: MongoDB database connection string 
+•	GEMINI_API_KEY: Used for AI study recommendations 
 
-MONGO_URI=
-
-GEMINI_API_KEY=
 ```
 
-Do NOT upload `.env` to GitHub.
+
 
 ---
 
