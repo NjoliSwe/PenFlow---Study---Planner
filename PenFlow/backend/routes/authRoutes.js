@@ -11,6 +11,23 @@ router.post("/signup", async (req, res) => {
         message: "Please fill in all fields"
       });
     }
+    const emailPattern =
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!emailPattern.test(email.toLowerCase())) {
+  return res.status(400).json({
+    message: "Please enter a valid email"
+  });
+}
+
+const passwordPattern =
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>_\-+=/\\[\];'`~]).{8,}$/;
+
+if (!passwordPattern.test(password)) {
+  return res.status(400).json({
+    message: "Password must be at least 8 characters and include uppercase, lowercase, number, and special character"
+  });
+}
 
     const existingUser = await User.findOne({
       email: email.toLowerCase()
