@@ -46,7 +46,13 @@ The account already includes:
 This avoids creating a new account during demonstrations.
 
 ---
+# MangoDB Atlas Account
+Email: 
+abdullahnajla73@gmail.com
 
+Password:
+Njoli@20066
+---
 # Main Features
 
 ## Authentication
@@ -86,6 +92,13 @@ Missed sessions are automatically rescheduled into future available slots.
 - Study reminders
 - Deadline reminders
 - Custom reminder settings
+
+### Reminder Settings Note
+
+To save reminder preferences in the database, the user must open the **Reminders** page, go to **Settings**, and click **Save Settings**.  
+After saving, the reminder settings will be stored in MongoDB and loaded again when the user returns to the page.
+
+
 
 ## AI Study Advice
 Using Google Gemini AI:
@@ -258,23 +271,23 @@ The project is already hosted online and does not require local setup.
 
 If running locally:
 
-## Clone Repository
+## 1.Download the project ZIP file and extract (unzip) it, or clone the repository. 
 
 ```bash
-git clone https://github.com/NjoliSwe/PenFlow---Study---Planner.git
+ git clone https://github.com/NjoliSwe/PenFlow---Study---Planner.git
 ```
 
-## Open Backend
+## 2.Open the project folder:
+
+```bash
+cd PenFlow
+```
+
+## 3.Install backend dependencies:
 
 ```bash
 cd backend
 npm install
-```
-
-## Start Server
-
-```bash
-node server.js
 ```
 
 Backend runs on:
@@ -283,13 +296,30 @@ Backend runs on:
 http://localhost:5000
 ```
 
-## Run Frontend
+## 4.Make sure .env file inside the backend folder is: 
 
-Open frontend using Live Server.
+PORT=5000
+MONGO_URI=mongodb+srv://penflow_admin:PenFlowGroup7@penflowcluster.bgy6wlo.mongodb.net/?appName=PenFlowCluster
+GEMINI_API_KEY= AIzaSyAIXctFx5ah9xPE7zvtuup29mQY2VH9dyE
+
+## 5.Start the backend server: 
+
+```bash
+node server.js
+```
+
+## 6.Open the frontend folder and run it using Live Server or localhost. 
+
+Note:
+The deployed version of PenFlow uses a backend API hosted on Render:
+const API_URL = "https://penflow-study-planner.onrender.com";
+If developers run the project locally, this URL in api.js in the frontend folder should be changed to:
+const API_URL = "http://localhost:5000";
+This allows the frontend to connect to the locally running backend server instead of the deployed Render API.
 
 ---
 
-# Deployment Workflow
+# Deployment Workflow if you cloned the repositry
 
 After modifying code:
 
